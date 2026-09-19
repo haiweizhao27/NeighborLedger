@@ -22,7 +22,7 @@ import java.time.LocalDateTime
 /**
  * 后台常驻通知监听服务（第五章第 1 条）。
  *
- * 职责：监听系统通知 → 交给统一解析层 → 成功则入库 + 写日志 + 触发超级岛；失败则累计连续失败次数。
+ * 职责：监听系统通知 → 交给统一解析层 → 成功则入库 + 写日志 + 触发超额提醒；失败则累计连续失败次数。
  * 保活：promote 为前台低耗通知（specialUse），对抗 HyperOS 杀后台；断开后自动 requestRebind 重试。
  */
 class LedgerNotificationService : NotificationListenerService() {
@@ -68,14 +68,14 @@ class LedgerNotificationService : NotificationListenerService() {
             when (parsed.type) {
                 "balance" -> repo.applyBalance(parsed.channel, parsed.amount, parsed.rawText, parsed.timestamp)
                 "expense" -> {
-                    // 超级岛触发判定：这笔支出「之前」是否已超额（今日累计消费 > 今日限额）。
+                    // 超额提醒触发判定：这笔支出「之前」是否已超额（今日累计消费 > 今日限额）。
                     val today = java.time.LocalDate.now()
                     val alreadyOver = repo.todayExpense(today) > prefs.todayLimit
                     repo.applyExpense(
                         TxRecord(parsed.channel, "expense", parsed.amount, parsed.note, parsed.rawText, parsed.timestamp)
                     )
                     if (alreadyOver) {
-                        SuperIslandNotifier.show(this, Persona.superIslandLine(config.config))
+                        OverBudgetNotifier.show(this, Persona.overBudgetLine(config.config))
                     }
                 }
                 "income" -> repo.applyIncome(
