@@ -1,0 +1,24 @@
+<resources>
+    <!-- MIUI8 扁平：适度圆角、低饱和、轻动效；深浅色跟随系统（DayNight）。 -->
+    <style name="Theme.NeighborLedger" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorOnPrimary">@color/on_brand</item>
+        <item name="colorSecondary">@color/brand</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">@bool/window_light_status</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.NeighborLedger.AlertDialog</item>
+    </style>
+
+    <!-- 对话框：小圆角方框，去掉“胶囊/AI”过圆的手感。 -->
+    <style name="ThemeOverlay.NeighborLedger.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.NeighborLedger.Small</item>
+    </style>
+    <style name="ShapeAppearance.NeighborLedger.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+</resources>
