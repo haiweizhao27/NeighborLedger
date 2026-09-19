@@ -23,6 +23,8 @@ signing.properties
 
 # ---- 构建产物 ----
 *.apk
+# 例外：仓库根目录随版本发布的 APK 属于要提交的产物
+!NeighborLedger-v*.apk
 *.aab
 *.ap_
 *.dex
