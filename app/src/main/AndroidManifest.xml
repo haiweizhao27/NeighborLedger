@@ -6,7 +6,7 @@
         仅申请「通知」与「前台服务」两类权限，禁相册、禁外部存储写入。
         - BIND_NOTIFICATION_LISTENER_SERVICE / FOREGROUND_SERVICE(_SPECIAL_USE) /
           RECEIVE_BOOT_COMPLETED 均为安装期签名或普通权限，不会弹出运行时授权框；
-        - POST_NOTIFICATIONS 是 Android 13+ 展示「超级岛」胶囊通知所需的运行时权限（通知类）。
+        - POST_NOTIFICATIONS 是 Android 13+ 展示超额提醒通知所需的运行时权限（通知类）。
     -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
