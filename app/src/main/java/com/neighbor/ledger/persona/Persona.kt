@@ -45,7 +45,7 @@ object Persona {
 
     fun future(cfg: AppConfig): String = cfg.persona.future.randomOrNull() ?: ""
 
-    fun superIslandLine(cfg: AppConfig): String = cfg.persona.superIsland.randomOrNull() ?: ""
+    fun overBudgetLine(cfg: AppConfig): String = cfg.persona.overBudget.randomOrNull() ?: ""
 
     private fun <T> List<T>.randomOrNull(): T? = if (isEmpty()) null else random()
 }
