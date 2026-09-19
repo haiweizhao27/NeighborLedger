@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        权限硬性约束（第八章）：
+        仅申请「通知」与「前台服务」两类权限，禁相册、禁外部存储写入。
+        - BIND_NOTIFICATION_LISTENER_SERVICE / FOREGROUND_SERVICE(_SPECIAL_USE) /
+          RECEIVE_BOOT_COMPLETED 均为安装期签名或普通权限，不会弹出运行时授权框；
+        - POST_NOTIFICATIONS 是 Android 13+ 展示「超级岛」胶囊通知所需的运行时权限（通知类）。
+    -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".LedgerApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NeighborLedger">
+
+        <!-- 全局唯一主页面 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 按日期查看原始日志的二级页 -->
+        <activity
+            android:name=".ui.LogViewerActivity"
+            android:exported="false" />
+
+        <!--
+            通知监听服务（后台常驻）。
+            bind 权限限制了只有系统能绑定；foregroundServiceType=specialUse 用于低耗前台通知对抗杀后台。
+        -->
+        <service
+            android:name=".service.LedgerNotificationService"
+            android:exported="true"
+            android:label="@string/notification_listener_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:foregroundServiceType="specialUse">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="read_wechat_change_notifications_to_bookkeep_locally_no_network_no_upload" />
+        </service>
+
+        <!-- 开机 / 服务被杀后的自动重试与月度初始化调度 -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
