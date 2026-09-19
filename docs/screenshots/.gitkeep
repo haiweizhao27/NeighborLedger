@@ -1,0 +1,5 @@
+# 截图目录
+#   screenshot-1.jpg / screenshot-2.jpg / screenshot-3.jpg
+#   —— 由根目录 README.md 的「📸 截图」一节引用。
+#
+# 如需新增截图：把图片放进本目录，并在 README 的截图区加一行 <img src="...">。
