@@ -51,13 +51,20 @@
 
 ---
 
+## ⬇️ 下载安装
+
+- **[NeighborLedger-v1.4.1.apk](NeighborLedger-v1.4.1.apk)** —— debug 构建，13.8 MB，直接传到手机安装即可。
+- 装好后请在系统设置里给「邻家账本」开启**通知使用权**（逐步说明见 `安装到手机-打包安装步骤.txt`）。
+
+---
+
 ## ✨ 功能
 
 - **通知自动记账**：读取微信支付通知，自动抓取金额与时间入账（本地解析，不联网）。
 - **月历视图**：每天按「当日消费 ÷ 当日限额」着色，超支标红，一眼看出哪天花超了。
 - **折线图 / 月度归档**：历史消费趋势离线归档，随取随看。
 - **额度三件套**：今日可用额度、当日累计消费、周期平均消费。
-- **超级岛提醒**：HyperOS 胶囊通知，在「已超额后再花一笔」时弹出提醒。
+- **超额提醒**：当日已超支后再花一笔时，弹出一条本地通知提醒。
 - **条目操作**：长按 → 编辑 / 删除 / 多选批量删除；双击 → 改备注。
 - **手势**：条目左右滑切上一天/下一天，日历左右滑切月。
 - **手动补录**：底部「添加」可直接记一笔。
@@ -120,7 +127,7 @@ NeighborLedger/
          ├─ persona/   Persona.kt               # 二次元少女人设文案路由
          ├─ log/       DailyLogWriter.kt        # logs/yyyy-MM-dd.log
          ├─ chart/     ChartArchive.kt LineChartView.kt MonthCalendarView.kt
-         ├─ service/   LedgerNotificationService.kt SuperIslandNotifier.kt Workers.kt
+         ├─ service/   LedgerNotificationService.kt OverBudgetNotifier.kt Workers.kt
          └─ ui/        MainViewModel.kt MainActivity.kt BillAdapter.kt LogViewerActivity.kt
 ```
 
