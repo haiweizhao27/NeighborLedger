@@ -1,0 +1,97 @@
+{
+  "version": 2,
+  "initialBalance": 800.0,
+  "monthlyDeposit": 300.0,
+  "channels": {
+    "wechat": {
+      "enabled": true,
+      "name": "微信零钱",
+      "packageName": "com.tencent.mm",
+      "amountPattern": "[¥￥]\\s*([0-9]+(?:\\.[0-9]{1,2})?)",
+      "incomeKeywords": ["收款", "到账", "入账", "已收", "收到", "转入", "退款", "红包", "零钱充值", "收下", "报酬", "转账", "收钱", "返现"],
+      "expenseKeywords": ["支付", "付款", "消费", "支出", "扣款", "扣费", "提现", "转出", "购买", "买单", "下单"],
+      "balanceKeywords": ["零钱余额", "当前余额", "账户余额", "剩余金额", "可用余额"],
+      "incomePatterns": ["(收款|到账|入账|转入|零钱充值|转账|收钱|返现|收到)[^，。]{0,12}[¥￥]\\s*[0-9]+(?:\\.[0-9]{1,2})?"],
+      "expensePatterns": ["(支付|付款|消费|支出|扣款|扣费|提现|转出)[^，。]{0,12}[¥￥]\\s*[0-9]+(?:\\.[0-9]{1,2})?"],
+      "balancePatterns": ["(零钱|账户|可用|剩余)(余额|金额)[^，。]{0,8}[¥￥]\\s*[0-9]+(?:\\.[0-9]{1,2})?"]
+    },
+    "alipay": {
+      "enabled": false,
+      "name": "支付宝",
+      "packageName": "com.eg.android.AlipayGphone",
+      "amountPattern": "[¥￥]\\s*([0-9]+(?:\\.[0-9]{1,2})?)",
+      "incomeKeywords": ["收款", "到账", "入账", "红包", "退款", "转入", "资金"],
+      "expenseKeywords": ["支付", "消费", "付款", "支出", "扣款", "提现", "转出", "购买"],
+      "balanceKeywords": ["余额宝", "账户余额", "当前余额", "可用余额"],
+      "incomePatterns": [],
+      "expensePatterns": [],
+      "balancePatterns": []
+    },
+    "wechat_fund": {
+      "enabled": false,
+      "name": "微信零钱通",
+      "packageName": "com.tencent.mm",
+      "amountPattern": "[¥￥]\\s*([0-9]+(?:\\.[0-9]{1,2})?)",
+      "incomeKeywords": ["零钱通收益", "收益到账", "转入零钱通"],
+      "expenseKeywords": ["零钱通转出", "零钱通支付", "赎回"],
+      "balanceKeywords": ["零钱通余额", "零钱通总金额", "当前持有"],
+      "incomePatterns": [],
+      "expensePatterns": [],
+      "balancePatterns": []
+    },
+    "other": {
+      "enabled": false,
+      "name": "其他渠道",
+      "packageName": "",
+      "amountPattern": "[¥￥]\\s*([0-9]+(?:\\.[0-9]{1,2})?)",
+      "incomeKeywords": ["收款", "到账", "入账", "红包", "退款", "转入"],
+      "expenseKeywords": ["支付", "消费", "付款", "支出", "扣款", "提现", "转出"],
+      "balanceKeywords": ["余额"],
+      "incomePatterns": [],
+      "expensePatterns": [],
+      "balancePatterns": []
+    }
+  },
+  "shoppingKeywords": ["网购", "淘宝", "天猫", "京东", "拼多多", "谷子", "手办", "周边", "盲盒", "吧唧", "立牌", "手账", "购物", "快递", "周边", "模型", "娃娃"],
+  "foodKeywords": ["奶茶", "外卖", "美团", "饿了么", "咖啡", "下午茶", "火锅", "小吃", "饮料", "大餐", "零食", "烧烤", "甜品"],
+  "persona": {
+    "future": ["哟，这么早就想着规划了"],
+    "superIsland": [
+      "喂，今天已经超支咯，收手一点啦",
+      "还在花钱？钱包已经快要扛不住了噢"
+    ],
+    "shoppingOver": [
+      "又被消费主义蛊惑咯，钱包偷偷在哭哦",
+      "住手！谷子还没到家，余额先离家出走了",
+      "好看是真好看，钱包空空也是真的",
+      "冲动下单一时爽，吃土日子长又长"
+    ],
+    "foodOver": [
+      "钱花没了，肉肉倒是稳稳长身上了喂",
+      "嘴巴享受完，该轮到钱包受难了是吧",
+      "快乐下肚，余额原地蒸发～",
+      "吃爽了，接下来委屈肚子过日子咯"
+    ],
+    "mildOver": [
+      "唔，今天预算被干碎一点点哦",
+      "开销超标啦，稍微收敛一点点嘛",
+      "今天花钱有点放飞自我咯"
+    ],
+    "severeOver": [
+      "大事不妙，钱包已经奄奄一息了啊喂",
+      "彻底放飞了是吧！节制一点啦"
+    ],
+    "normal": [
+      "花销刚刚好，状态很稳",
+      "不省不浪，今天发挥稳定"
+    ],
+    "verySaving": [
+      "超克制！钱包安全感拉满✨",
+      "存钱进度 + 1，很棒哦",
+      "稳住，以后有钱好好犒劳自己"
+    ],
+    "edgeWarn": [
+      "危险边缘横跳！下次攥紧钱包哦"
+    ]
+  }
+}
