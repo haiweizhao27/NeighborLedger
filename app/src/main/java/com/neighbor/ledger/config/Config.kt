@@ -37,7 +37,7 @@ data class ChannelConfig(
 
 data class PersonaConfig(
     val future: List<String> = emptyList(),
-    val superIsland: List<String> = emptyList(),
+    val overBudget: List<String> = emptyList(),
     val shoppingOver: List<String> = emptyList(),
     val foodOver: List<String> = emptyList(),
     val mildOver: List<String> = emptyList(),
