@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">邻家账本</string>
+    <string name="notification_listener_label">邻家账本·通知监听</string>
+    <string name="service_running_hint">本地记账监听运行中（不联网、不上传）</string>
+
+    <string name="filter_all">总览</string>
+    <string name="filter_expense">支出</string>
+    <string name="filter_income">收入</string>
+    <string name="btn_calendar">日历</string>
+    <string name="btn_chart">折线图</string>
+    <string name="btn_view_log">查看日志</string>
+    <string name="btn_update_rules">更新规则</string>
+    <string name="btn_set_balance">修改余额</string>
+
+    <string name="tc_available">今日可用额度</string>
+    <string name="tc_spent">当日累计消费</string>
+    <string name="tc_limit">今日日限额</string>
+    <string name="tc_avg">周期平均消费</string>
+    <string name="tc_net">当日总消费</string>
+    <string name="tc_end_bal">当日期末余额</string>
+    <string name="tc_plan">少女留言</string>
+    <string name="tc_balance">当前余额</string>
+
+    <string name="rename_title">重新命名备注</string>
+    <string name="rename_done">备注已更新（数据库 &amp; 日志）</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="go_settings">去设置</string>
+
+    <string name="config_import_ok">JSON 配置已更新（仅参数，未改程序骨架）</string>
+    <string name="config_import_fail">配置格式异常，已保留旧配置，程序不受影响</string>
+    <string name="seed_title">修改初始余额（种子）</string>
+    <string name="seed_hint">填入你当前的可用总余额，程序会据此重算今日额度。\n（正常应由余额通知自动校准，这里用于手动兜底。）</string>
+    <string name="seed_invalid">请输入有效的非负金额</string>
+    <string name="seed_done">余额已更新，今日额度已重算</string>
+
+    <string name="sel_count">已选 %1$d 条</string>
+    <string name="sel_all">全选</string>
+    <string name="sel_delete">删除</string>
+    <string name="sel_cancel">取消</string>
+    <string name="batch_delete_title">批量删除</string>
+    <string name="batch_delete_msg">将删除选中的 %1$d 条记录，余额会相应回滚。此操作不可撤销。</string>
+    <string name="delete_done">已删除所选记录</string>
+    <string name="btn_add">添加</string>
+    <string name="manual_entry_title">手动入账</string>
+    <string name="manual_amount_hint">金额（元）</string>
+    <string name="manual_note_hint">备注（可选）</string>
+    <string name="manual_invalid">请输入有效的正数金额</string>
+    <string name="manual_done">已手动入账</string>
+    <string name="action_title">选择操作</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_multi">多选管理</string>
+    <string name="edit_title">编辑条目</string>
+    <string name="edit_done">已更新该条目</string>
+
+    <string name="log_empty">%1$s 暂无日志</string>
+    <string name="log_empty_hint">当日暂无日志</string>
+    <string name="log_pick_date">选择日期</string>
+    <string name="log_back">返回</string>
+
+    <string name="listener_guide_title">开启通知访问权限</string>
+    <string name="listener_guide_body">本 APP 纯本地离线记账，需要通知访问权限才能读取微信零钱收支通知。请在系统设置中开启「邻家账本」的访问权限。</string>
+    <string name="listener_killed_hint">通知监听被系统断开，点击前往权限页重新开启</string>
+
+    <string name="banner_format_changed">%1$s 通知格式更新，暂时解析失败（点此关闭提示）</string>
+    <string name="banner_no_balance">未获取余额数据，请让对应App推送余额通知</string>
+
+    <string name="manual_text">【使用 &amp; 更新说明书】\n1. 本 APP 纯本地离线运行，不会上传任何隐私数据。\n2. 当前已启用：微信零钱；预留封存：支付宝、微信零钱通，可导入外部 JSON 配置开启，无需重装 APK。\n3. 微信通知改版识别失效时，可手动安装新版 APK。\n4. 重装新版 APK 不会丢失历史账单、日志、月度归档数据，数据库独立不会被覆盖。\n5. 小米 HyperOS 权限指引：通知访问权限、关闭电池优化、允许自启动、后台无限制。\n6. JSON 配置导入说明：导入配置仅更新解析规则、开关、文案，不会改动程序内部骨架。</string>
+</resources>
