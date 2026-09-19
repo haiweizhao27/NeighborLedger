@@ -1,0 +1,27 @@
+<resources>
+    <!-- MIUI8 低饱和扁平配色（浅色） -->
+    <color name="brand">#4A90D9</color>
+    <color name="brand_soft">#334A90D9</color>
+    <color name="on_brand">#FFFFFF</color>
+
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_alt">#F0F0F0</color>
+
+    <color name="text_primary">#1F1F1F</color>
+    <color name="text_secondary">#5F6368</color>
+
+    <color name="saving_green">#2E7D32</color>
+    <color name="over_red">#C62828</color>
+    <color name="warn_yellow">#C77800</color>
+    <color name="selection">#4A90D9</color>
+    <color name="day_normal">#FFFFFF</color>
+
+    <!-- 日历浅色小圆角方框填充（浅色） -->
+    <color name="cal_green">#C9E7CB</color>
+    <color name="cal_red">#EFC3C1</color>
+    <color name="cal_neutral">#EBEBEB</color>
+    <color name="cal_warn">#F4E2A6</color>
+
+    <color name="ic_launcher_background">#4A90D9</color>
+</resources>
